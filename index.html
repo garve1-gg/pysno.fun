@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyšno</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #1e1e1e; /* světlejší černá */
+      padding: 2rem;
+      margin: 0;
+      color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 5rem;
+      color: #00bcd4; /* moderní tyrkysová barva */
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      color: black;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.1s ease;
+      font-weight: bold;
+    }
+
+    .link-button:hover {
+      transform: scale(1.02);
+    }
+
+    .link-button img {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+    }
+
+
+    .link-text {
+      font-size: 1rem;
+    }
+
+    .malware:hover{
+        background-color: red;
+    }
+
+    .good-girl:hover{
+        background-color: #C2185B;
+    }
+    
+    .res-calc:hover{
+        background-color: #FAF3E0;
+    }
+    
+    .github:hover{
+        background-color: #0000;
+        color: #ffff;
+    }
+
+    .link-button:hover .icon{
+        content: url('github2.png');
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .link-button {
+        font-size: 0.95rem;
+        padding: 0.6rem 0.8rem;
+      }
+
+      .link-button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pyšno</h1>
+  <div class="button-container">
+    <a class="link-button malware" href="https://www.proud-malware.cloud/" target="_blank">
+      <img src="malware.png" alt="Favicon">
+      <span class="link-text">Malware Portál</span>
+    </a>
+
+    <a class="link-button good-girl" href="https://www.otevri-to.fun/" target="_blank">
+        <img src="girl.png" alt="Favicon">
+        <span class="link-text">Good Girl</span>
+    </a>
+
+    <a class="link-button res-calc" href="https://www.res-calc.fun/" target="_blank">
+        <img src="resistor.png" alt="Favicon">
+        <span class="link-text">Kalkulačka Rezistorů</span>
+    </a>
+
+    <a class="link-button github" href="https://github.com/garve1-gg" target="_blank">
+        <img class="icon" src="github.png" alt="Favicon">
+        <span class="link-text">Github</span>
+    </a>
+
+  </div>
+</body>
+</html>
