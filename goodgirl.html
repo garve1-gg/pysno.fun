@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GOOD GIRL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    h1 {
+      font-size: 200px;
+      color: #ff4d4d;
+      position: relative;
+      z-index: 2;
+      letter-spacing: 12px;
+      text-align: center;
+      animation: pulse 3s ease-in-out infinite;
+      text-shadow:
+        0 0 2px #ff4d4d,
+        0 0 4px #ff4d4d,
+        0 0 8px #ff1a1a,
+        0 0 15px #ff1a1a,
+        0 0 25px #ff6600,
+        0 0 35px #ffaa00;
+    }
+
+    @keyframes pulse {
+      0% {
+        text-shadow:
+          0 0 2px #ff4d4d,
+          0 0 4px #ff4d4d,
+          0 0 8px #ff1a1a,
+          0 0 15px #ff1a1a,
+          0 0 25px #ff6600,
+          0 0 35px #ffaa00;
+      }
+      50% {
+        text-shadow:
+          0 0 4px #ff6666,
+          0 0 8px #ff3333,
+          0 0 12px #ff3300,
+          0 0 20px #ff6600,
+          0 0 30px #ff9900,
+          0 0 45px #ffff33;
+      }
+      100% {
+        text-shadow:
+          0 0 2px #ff4d4d,
+          0 0 4px #ff4d4d,
+          0 0 8px #ff1a1a,
+          0 0 15px #ff1a1a,
+          0 0 25px #ff6600,
+          0 0 35px #ffaa00;
+      }
+    }
+
+    .line {
+      position: absolute;
+      width: 2px;
+      height: 60px;
+      background: red;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 8px red);
+      animation: fly 3s linear forwards;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateY(100vh) scaleX(0.5);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) scaleX(0.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>GOOD GIRL</h1>
+
+  <script>
+    function createFlyingLine() {
+      const line = document.createElement('div');
+      line.classList.add('line');
+
+      const left = Math.random() * window.innerWidth;
+      line.style.left = `${left}px`;
+
+      const height = 30 + Math.random() * 80;
+      line.style.height = `${height}px`;
+
+      const colors = ['#ff4d4d', '#ff1a1a', '#ff6600', '#ffaa00', '#fff'];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      line.style.background = color;
+      line.style.filter = `drop-shadow(0 0 10px ${color})`;
+
+      document.body.appendChild(line);
+
+      setTimeout(() => {
+        line.remove();
+      }, 3000);
+    }
+
+    // Rychlejší spawn = více linek
+    setInterval(() => {
+      for (let i = 0; i < 5; i++) {
+        createFlyingLine();
+      }
+    }, 100);
+  </script>
+
+</body>
+</html>
